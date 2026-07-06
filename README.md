@@ -35,7 +35,7 @@ Needs `git` on `PATH`.
 ```sh
 skillx init                    # once per machine: clone your skills repo
 skillx add anthropics/skills   # vendor skills from any repo (or local path)
-skillx use                     # pick what's active here
+skillx use                     # pick which skills are active
 ```
 
 New machine: `skillx init && skillx use --all`. That's it.
@@ -47,11 +47,11 @@ New machine: `skillx init && skillx use --all`. That's it.
 | `skillx add <ref>` | Copy skills into your repo from `owner/repo`, a git URL, or a local path. Origin (repo, path, commit, branch) is recorded. Commits for you. |
 | `skillx use` | Multi-select of every skill: check to install, uncheck to remove. `--all` installs everything, `--drop <x>` uninstalls, `--agent claude` limits scope. |
 | `skillx use <skill> --local` | Copy a skill into the current project instead of linking globally (committable). |
-| `skillx update` | Pull your repo. Skills removed elsewhere get unlinked here. |
+| `skillx update` | Pull your repo. Links follow: skills removed on one machine get unlinked on the others. |
 | `skillx update <skill>` | Re-fetch a vendored skill from its origin, show what changed, confirm, commit. |
-| `skillx list` | Every skill: where it came from, where it's installed. |
-| `skillx rm <skill>` | Delete a skill from the repo and unlink it here. |
-| `skillx status` | Everything on this machine: each link and dir, managed or not. `--offline` skips the fetch. |
+| `skillx list` | Every skill: where it came from, which agents use it. |
+| `skillx rm <skill>` | Delete a skill from the repo and remove its links. |
+| `skillx status` | Inspect the hub and agent dirs: every link and directory, managed or not. `--offline` skips the fetch. |
 | `skillx adopt` | Move skills installed by other tools (e.g. `npx skills`) into your repo, keeping them installed. |
 
 Every prompt has a flag equivalent; without a terminal skillx never
