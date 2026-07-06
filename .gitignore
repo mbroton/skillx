@@ -1,0 +1,7 @@
+/skillx
+/dist/
+/.gocache/
+
+# local agent instructions; never committed
+/AGENTS.md
+/CLAUDE.md
