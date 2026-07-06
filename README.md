@@ -15,9 +15,9 @@ agents      ~/.claude/skills/pr-review   -> hub
 ```
 
 Add a skill once, push, `skillx update` everywhere else. No registry, no
-daemon, no state files. The symlinks are the state; git is the sync. All
-git operations go through your `git`, so SSH keys and credential helpers
-just work.
+daemon, no state files. Installed *means* linked — the symlinks are the
+state, git is the sync. All git operations go through your `git`, so SSH
+keys and credential helpers just work.
 
 ## Install
 
@@ -85,6 +85,12 @@ path = "~/.codex/skills"
 Vendored skills' origins live in `skillx.toml` at the root of your skills
 repo, so `skillx update <skill>` can re-fetch them. Your own skills need
 no entry — the `skills/` directory listing is the inventory.
+
+## Design
+
+The full mental model — bag/hub/spokes, the ownership rule that makes
+deleting symlinks safe, and the plan/apply engine — is a five-minute
+read: [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Build
 
