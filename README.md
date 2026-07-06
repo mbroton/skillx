@@ -21,14 +21,16 @@ keys and credential helpers just work.
 
 ## Install
 
-Grab a binary from [releases](https://github.com/mbroton/skillx/releases)
-(Linux/macOS), or:
+One command, no dependencies (Linux/macOS; single static binary):
 
 ```sh
-go install github.com/mbroton/skillx@latest
+curl -fsSL https://raw.githubusercontent.com/mbroton/skillx/main/install.sh | sh
 ```
 
-Needs `git` on `PATH`.
+Or download a binary yourself from
+[releases](https://github.com/mbroton/skillx/releases). Runtime needs
+`git` on `PATH` — that's all. (Go is only needed if you build from
+source: `go install github.com/mbroton/skillx@latest`.)
 
 ## Start
 
